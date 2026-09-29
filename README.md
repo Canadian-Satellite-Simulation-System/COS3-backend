@@ -1,27 +1,69 @@
-# NASA Operational Simulator for Space Systems (NOS3)
+# COS3 - Canadian Satellite Simulation System
+TODO: Add more documentation :) 
 
-NOS3 is a suite of tools developed by NASA's Katherine Johnson Independent Verification and Validation (IV&V) Facility to aid in areas such as software development, integration & test (I&T), mission operations/training, verification and validation (V&V), and software systems check-out. 
-NOS3 provides a software development environment, a multi-target build system, an operator interface/ground station, dynamics and environment simulations, and software-based models of spacecraft hardware.
+## Docker Installation
 
-# Documentation
+COS3 runs inside an Ubuntu container with its own desktop, which you open in
+your browser. This works on macOS (including Apple Silicon), Linux, and Windows
+(through WSL2).
 
-[NOS3 - ReadTheDocs](https://nos3.readthedocs.io/en/latest/)
+### Prerequisites
 
-## Issues and Feature Requests
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) and start it.
+2. In Docker Desktop, open **Settings > Resources** and give it at least
+   **8 GB of memory** and **4 CPUs**.
+   builds are large.
+3. On Windows, run all of the commands below in a WSL2 terminal (e.g. Ubuntu), not PowerShell.
 
-Please report issues and request features on the GitHub tracking system - [NOS3 Issues](https://www.github.com/nasa/nos3/issues).
+### 1. Clone the repository with its submodules
 
-If you would like to contribute to the repository, please complete this [NASA Form][def] and submit it to gsfc-softwarerequest@mail.nasa.gov with Justin.R.Morris@nasa.gov CC'ed.
-Next, please create an issue describing the work to be performed noting that you intend to work it, create a related branch, and submit a pull request when ready. When complete, we will review and work to get it integrated.
+```bash
+git clone --recurse-submodules git@github.com:Canadian-Satellite-Simulation-System/COS3.git cos3
+cd cos3
+```
 
-If this project interests you or if you have any questions, please feel free to open an issue or discussion on the GitHub, contact any developer directly, or email `support@nos3.org`.
+If you already cloned it without `--recurse-submodules`, run:
 
-[def]: https://github.com/nasa/nos3/files/14578604/NOS3_Invd_CLA.pdf "NOS3 NASA Contributor Form PDF"
+```bash
+git submodule update --init --recursive
+```
 
-## License
+### 2. Start the container
 
-This project is licensed under the NOSA 1.3 (NASA Open Source Agreement) License. 
+```bash
+./docker/run.sh
+```
 
-## Versioning
+The first run builds the container image and takes a few minutes. When it
+finishes, open **http://localhost:6080/vnc.html** and click **Connect**. You'll
+see an Ubuntu desktop.
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository.
+Your local copy of the repo is mounted in the container at `~/nos3`, so edits
+you make on your computer show up inside the container right away.
+
+### 3. Build and launch
+
+Open a terminal on the container desktop (Applications > Terminal Emulator) and run:
+
+```bash
+cd ~/nos3
+make config
+make prep
+make
+make launch
+```
+
+After changing code, run `make` again, then `make launch`.
+
+### Stopping the container
+```bash
+./docker/stop.sh
+```
+
+Downloaded images and build dependencies are kept in the Docker volumes
+`cos3-docker` and `cos3-home`, so the next `./docker/run.sh` starts quickly. To
+free the disk space completely:
+
+```bash
+docker volume rm cos3-docker cos3-home
+```
