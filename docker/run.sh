@@ -19,6 +19,7 @@ docker run -d --privileged \
     --hostname nos3 \
     --shm-size=2g \
     -p 127.0.0.1:6080:6080 \
+    -p 127.0.0.1:2900:2900 \
     -v "$BASE_DIR":/home/jstar/nos3 \
     -v nos3-docker:/var/lib/docker \
     -v nos3-home:/home/jstar/.nos3 \

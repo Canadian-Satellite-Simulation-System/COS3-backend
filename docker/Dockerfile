@@ -23,6 +23,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get purge -y xfce4-screensaver light-locker || true \
     && rm -rf /var/lib/apt/lists/*
 
+RUN install -d -m 0755 /etc/apt/keyrings \
+    && wget -qO /etc/apt/keyrings/packages.mozilla.org.asc https://packages.mozilla.org/apt/repo-signing-key.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" > /etc/apt/sources.list.d/mozilla.list \
+    && printf 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000\n' > /etc/apt/preferences.d/mozilla \
+    && apt-get update && apt-get install -y --no-install-recommends firefox \
+    && rm -rf /var/lib/apt/lists/*
+
 # NOS3 user (uid 1000), in the docker group with passwordless sudo
 RUN (userdel -r ubuntu || true) \
     && useradd -m -u 1000 -s /bin/bash -G docker,sudo jstar \
