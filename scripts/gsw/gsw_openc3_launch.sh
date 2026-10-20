@@ -20,6 +20,9 @@ export GSW="openc3-openc3-operator-1"
 
 echo "Prepare openc3 containers..."
 cd $OPENC3_DIR
+# Listen on all interfaces so COSMOS is reachable through the nos3-desktop
+# container's port mapping (docker/run.sh still only exposes it to the host)
+sed -i 's/"127.0.0.1:2900:2900"/"0.0.0.0:2900:2900"/' $OPENC3_DIR/compose.yaml
 $OPENC3_PATH run
 echo ""
 
