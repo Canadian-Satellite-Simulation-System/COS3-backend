@@ -159,19 +159,34 @@ then
 fi
 echo ""
 
-## Install plugin
-echo "Install plugin..."
+## Load plugin into OpenC3
+echo "Load plugin into OpenC3..."
 cd $OPENC3_DIR/openc3-cosmos-nos3
-$OPENC3_CLI geminstall ./openc3-cosmos-nos3-1.0.$DATE.gem
+$OPENC3_CLI load ./openc3-cosmos-nos3-1.0.$DATE.gem DEFAULT
 INSTALL_STATUS=$?
 
 if [ $INSTALL_STATUS -eq 0 ]; then
-    echo "Gem installation successful"
+    echo "OpenC3 plugin load successful"
 else
-    echo "Gem installation failed with exit code: $INSTALL_STATUS"
+    echo "OpenC3 plugin load failed with exit code: $INSTALL_STATUS"
     exit 1
 fi
 echo ""
+
+
+## Install plugin
+#echo "Install plugin..."
+#cd $OPENC3_DIR/openc3-cosmos-nos3
+#$OPENC3_CLI geminstall ./openc3-cosmos-nos3-1.0.$DATE.gem
+#INSTALL_STATUS=$?
+
+#if [ $INSTALL_STATUS -eq 0 ]; then
+#    echo "Gem installation successful"
+#else
+#    echo "Gem installation failed with exit code: $INSTALL_STATUS"
+#    exit 1
+#fi
+#echo ""
 
 
 echo "OpenC3 build script complete."
