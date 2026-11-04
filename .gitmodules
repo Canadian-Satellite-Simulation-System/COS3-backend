@@ -92,8 +92,8 @@
 	branch = main
 [submodule "components/generic_css"]
 	path = components/generic_css
-	url = https://github.com/nasa-itc/generic_css.git
-	branch = main
+	url = https://github.com/Canadian-Satellite-Simulation-System/generic_css.git
+	branch = ed_comp
 [submodule "components/generic_eps"]
 	path = components/generic_eps
 	url = https://github.com/nasa-itc/generic_eps.git
