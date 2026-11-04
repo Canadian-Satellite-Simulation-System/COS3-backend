@@ -431,7 +431,13 @@
 
                 <data-provider>
                     <type>GENERIC_CSS_HIL_PROVIDER</type>
+                    <tcp-port>5000</tcp-port>
+                    <stale-timeout-ms>3000</stale-timeout-ms>
                 </data-provider>
+
+                <!-- <data-provider>
+                    <type>GENERIC_CSS_HIL_PROVIDER</type>
+                </data-provider> -->
 
 
                 <!-- <data-provider>               
