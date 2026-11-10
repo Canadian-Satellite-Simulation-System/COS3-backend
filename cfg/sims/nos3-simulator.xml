@@ -430,10 +430,32 @@
                 </connections>
 
                 <data-provider>
+                    <type>GENERIC_CSS_SWITCHING_PROVIDER</type>
+
+                    <!-- Initial mode -->
+                    <mode>SIM</mode>
+
+                    <!-- 42 configuration -->
+                    <hostname>fortytwo</hostname>
+                    <port>4227</port>
+                    <max-connection-attempts>30</max-connection-attempts>
+                    <retry-wait-seconds>1</retry-wait-seconds>
+                    <spacecraft>0</spacecraft>
+                    <42-css-scale-factor>1.0</42-css-scale-factor>
+
+                    <!-- HIL configuration -->
+                    <tcp-port>5000</tcp-port>
+                    <stale-timeout-ms>3000</stale-timeout-ms>
+
+                    <!-- Switching interface -->
+                    <control-port>5001</control-port>
+                </data-provider>
+
+                <!-- <data-provider>
                     <type>GENERIC_CSS_HIL_PROVIDER</type>
                     <tcp-port>5000</tcp-port>
                     <stale-timeout-ms>3000</stale-timeout-ms>
-                </data-provider>
+                </data-provider> -->
 
                 <!-- <data-provider>
                     <type>GENERIC_CSS_HIL_PROVIDER</type>
