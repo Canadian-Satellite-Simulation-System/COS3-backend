@@ -39,7 +39,7 @@
 
         <simulator>
             <name>stdio-terminal</name>
-            <active>false</active>
+            <active>true</active>
             <library>libsim_terminal.so</library>
             <hardware-model>
                 <type>SimTerminal</type>
@@ -76,7 +76,7 @@
 
         <simulator>
             <name>udp-terminal</name>
-            <active>false</active>
+            <active>true</active>
             <library>libsim_terminal.so</library>
             <hardware-model>
                 <type>SimTerminal</type>
@@ -132,7 +132,7 @@
 
         <simulator>
             <name>sample-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libsample_sim.so</library>
             <hardware-model>
                 <type>SAMPLE</type>
@@ -166,7 +166,7 @@
 
         <simulator>
             <name>gps</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgps_sim.so</library>
             <hardware-model>
                 <type>OEM615</type>
@@ -202,7 +202,7 @@
 
         <simulator>
             <name>camsim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libcam_sim.so</library>
             <hardware-model>
                 <type>ARDUCAM_OV5640</type>
@@ -223,7 +223,7 @@
 
         <simulator>
             <name>generic-eps-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_eps_sim.so</library>
             <hardware-model>
                 <type>GENERIC_EPS</type>
@@ -318,7 +318,7 @@
 
         <simulator>
             <name>generic-reactionwheel-sim0</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_rw_sim.so</library>
             <hardware-model>
                 <type>GENERICREACTIONWHEELHARDWARE</type>
@@ -351,7 +351,7 @@
 
         <simulator>
             <name>generic-reactionwheel-sim1</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_rw_sim.so</library>
             <hardware-model>
                 <type>GENERICREACTIONWHEELHARDWARE</type>
@@ -384,7 +384,7 @@
 
         <simulator>
             <name>generic-reactionwheel-sim2</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_rw_sim.so</library>
             <hardware-model>
                 <type>GENERICREACTIONWHEELHARDWARE</type>
@@ -487,7 +487,7 @@
 
         <simulator>
             <name>generic-torquer-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_torquer_sim.so</library>
             <hardware-model>
                 <type>GENERIC_TORQUER</type>
@@ -519,7 +519,7 @@
 
         <simulator>
             <name>generic-thruster-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_thruster_sim.so</library>
             <hardware-model>
                 <type>GENERIC_THRUSTER</type>
@@ -547,7 +547,7 @@
 
         <simulator>
             <name>truth42sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libtruth_42_sim.so</library>
             <hardware-model>
                 <type>TRUTH42</type>
@@ -573,7 +573,7 @@
 
         <simulator>
             <name>generic-fss-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_fss_sim.so</library>
             <hardware-model>
                 <type>GENERIC_FSS</type>
@@ -601,7 +601,7 @@
 
         <simulator>
             <name>generic-radio-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_radio_sim.so</library>
             <hardware-model>
                 <type>GENERIC_RADIO</type>
@@ -672,7 +672,7 @@
 
         <simulator>
             <name>generic-imu-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_imu_sim.so</library>
             <hardware-model>
                 <type>GENERIC_IMU</type>
@@ -703,7 +703,7 @@
 
         <simulator>
             <name>generic-mag-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_mag_sim.so</library>
             <hardware-model>
                 <type>GENERIC_MAG</type>
@@ -733,7 +733,7 @@
 
         <simulator>
             <name>generic-star-tracker-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libgeneric_star_tracker_sim.so</library>
             <hardware-model>
                 <type>GENERIC_STAR_TRACKER</type>
@@ -766,7 +766,7 @@
 
         <simulator>
             <name>blackboard-sim</name>
-            <active>false</active>
+            <active>true</active>
             <library>libblackboard_sim.so</library>
             <hardware-model>
                 <type>BLACKBOARD</type>
